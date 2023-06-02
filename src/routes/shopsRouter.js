@@ -16,8 +16,16 @@ router.post('/',
     ctrlWrapper(ctrl.add))
 
 router.get('/', ctrlWrapper(ctrl.getShopList))
+router.get('/check/:asdf', (req, res) => {
+    const { asdf } = req.params
+    console.log('asdf: ', asdf);
+    res.json({
+        "message": "api works"
+    })
+})
 
-router.get('/:shopId', isValidId, ctrlWrapper(ctrl.getById))
+
+router.get('/:id', isValidId, ctrlWrapper(ctrl.getById))
 
 // router.put('/:shopId', isValidId,
 //     validateBody(schemas.addShopSchema),

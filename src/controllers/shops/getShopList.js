@@ -1,7 +1,8 @@
 const { Shop } = require("../../models/shopModel")
 const { HttpError } = require("../../helpers/HttpErrors")
 
-const getShopList = async (req, res, next) => {
+const getShopList = async (req, res) => {
+  console.log('getShopList');
 
   const result = await Shop.find({}, "shopName")
 
