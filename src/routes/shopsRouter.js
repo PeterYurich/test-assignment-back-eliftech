@@ -16,14 +16,6 @@ router.post('/',
     ctrlWrapper(ctrl.add))
 
 router.get('/', ctrlWrapper(ctrl.getShopList))
-router.get('/check/:asdf', (req, res) => {
-    const { asdf } = req.params
-    console.log('asdf: ', asdf);
-    res.json({
-        "message": "api works"
-    })
-})
-
 
 router.get('/:id', isValidId, ctrlWrapper(ctrl.getById))
 
