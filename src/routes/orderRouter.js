@@ -17,7 +17,7 @@ router.post('/',
     validateBody(schemas.submitOrderSchema),
     ctrlWrapper(ctrl.submitOrder))
 
-router.get('/orders', ctrlWrapper(getAllOrders))
+router.get('/', ctrlWrapper(getAllOrders))
 
 // router.put('/:shopId', isValidId,
 //     validateBody(schemas.addShopSchema),
