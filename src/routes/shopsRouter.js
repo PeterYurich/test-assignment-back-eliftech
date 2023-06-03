@@ -1,14 +1,9 @@
 const express = require('express')
-
 const ctrl = require("../controllers/shops/index.js")
-
-const router = express.Router()
-
 const { ctrlWrapper } = require('../helpers')
-
 const { validateBody, isValidId } = require('../middlewares')
-
 const { schemas } = require('../models/shopModel')
+const router = express.Router()
 
 
 router.post('/',

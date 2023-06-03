@@ -1,7 +1,8 @@
 const express = require('express')
 
 const ctrl = require("../controllers/orders/index.js")
-const submitOrder = require("../controllers/orders/submitOrder.js")
+// const submitOrder = require("../controllers/orders/submitOrder.js")
+const getAllOrders = require("../controllers/orders/getAllOrders.js")
 
 const router = express.Router()
 
@@ -14,9 +15,9 @@ const { schemas } = require('../models/orderModel')
 
 router.post('/',
     validateBody(schemas.submitOrderSchema),
-    ctrlWrapper(submitOrder))
+    ctrlWrapper(ctrl.submitOrder))
 
-// router.get('/orders', ctrlWrapper(ctrl.getOrders))
+router.get('/orders', ctrlWrapper(getAllOrders))
 
 // router.put('/:shopId', isValidId,
 //     validateBody(schemas.addShopSchema),

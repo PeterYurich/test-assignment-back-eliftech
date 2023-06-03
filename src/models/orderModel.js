@@ -17,11 +17,20 @@ const submitOrderSchema = Joi.object({
 const orderSchema = new Schema({
     order:
         [{
-            product: {
-                type: Object
+            productName: {
+                type: String,
+                required: true,
+            },
+            price: {
+                type: Number,
+                required: true
+            },
+            pictureUrl: {
+                type: String,
             },
             amount: {
-                type: Number
+                type: Number,
+                required: true
             }
         }],
 

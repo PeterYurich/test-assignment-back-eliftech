@@ -3,7 +3,6 @@ const { Order } = require('../../models/orderModel')
 
 const submitOrder = async (req, res) => {
     const { name, email, phone, address, order } = req.body
-    console.log('req.body: ', req.body);
 
     let user = await User.findOne({ email })
 
@@ -22,7 +21,7 @@ const submitOrder = async (req, res) => {
 
     res.status(201).json({
         user,
-        order,
+        newOrder,
     })
 }
 
