@@ -14,13 +14,4 @@ router.get('/', ctrlWrapper(ctrl.getShopList))
 
 router.get('/:id', isValidId, ctrlWrapper(ctrl.getById))
 
-// router.put('/:shopId', isValidId,
-//     validateBody(schemas.addShopSchema),
-//     ctrlWrapper(ctrl.updateById))
-// router.patch('/:shopId/favorite',
-//     validateBody(schemas.updateProductsSchema),
-//     ctrlWrapper(ctrl.updateFavorite))
-// router.delete('/:shopId',
-//     ctrlWrapper(ctrl.deleteById))
-
 module.exports = router

@@ -13,8 +13,6 @@ const getAllOrders = async (req, res, next) => {
       const result = await Order.find(query, "-createdAt -updatedAt", { skip, limit })
         .populate("owner", "order")
 
-    // const user = await User.findOne({ email }) 
-    console.log('result: ', result);
     res.json(result)
 }
 

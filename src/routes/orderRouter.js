@@ -1,7 +1,6 @@
 const express = require('express')
 
 const ctrl = require("../controllers/orders/index.js")
-// const submitOrder = require("../controllers/orders/submitOrder.js")
 const getAllOrders = require("../controllers/orders/getAllOrders.js")
 
 const router = express.Router()
@@ -18,15 +17,5 @@ router.post('/',
     ctrlWrapper(ctrl.submitOrder))
 
 router.get('/', ctrlWrapper(getAllOrders))
-
-// router.put('/:shopId', isValidId,
-//     validateBody(schemas.addShopSchema),
-//     ctrlWrapper(ctrl.updateById))
-// router.patch('/:shopId/favorite',
-//     validateBody(schemas.updateProductsSchema),
-//     ctrlWrapper(ctrl.updateFavorite))
-
-// router.delete('/:shopId',
-//     ctrlWrapper(ctrl.deleteById))
 
 module.exports = router
