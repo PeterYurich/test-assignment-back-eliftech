@@ -14,9 +14,8 @@ const getAllOrders = async (req, res, next) => {
 
   const query = { owner: CurrentUserId };
 
-  const result = await Order.find(query, "-createdAt -updatedAt", { skip, limit })
-    .populate("owner", "order")
-
+  const result = await Order.find(query, "-updatedAt", { skip, limit })
+    
   res.json(result)
 }
 
